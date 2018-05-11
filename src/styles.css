@@ -1,0 +1,253 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700');
+
+
+button.btn-submit{
+    background-color: #38547b;
+    color: #fff;
+    width: 100%;
+}
+button.btn-submit:focus,button.btn-submit:hover{
+    background-color: #38547b;
+}
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+/*for error div i*/
+div.error-message i{
+    vertical-align: middle !important;
+}
+
+/*for tab control*/
+.tabs{
+    height: 65px;
+}
+.tabs .tab{
+    text-transform : none !important;
+    line-height: 65px;
+    height: 65px;
+}
+.tabs .tab a{
+    font-size: 25px;
+    color: grey !important;
+}
+
+.tabs .tab a.active{
+    background-color: #fff !important;
+}
+/* New style */
+
+
+body {
+    background: #E2E4E6;
+    padding-top: 4em;
+}
+ 
+.form-container {
+    background-color: #2E9CE6;
+    padding: 3.5em;
+    width: 500px;
+    position: fixed;
+    left: 45%;
+    margin-left: -250px;
+}
+ 
+button {
+    padding: 0.5em;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+ 
+.google,.login,.email {
+    background: #ECECEC;
+    background-size: 25px;
+}
+ 
+ 
+.create-account-txt {
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+}
+ 
+.auth-btn {
+    background: #3B8598;
+    color: white;
+}
+ 
+
+.form-container>form>input {
+    display: block;
+    width: 100%;
+    min-height: 35px;
+    margin: 5px 0 ;
+    
+}
+input.input-txt {
+    background: #fff !important;
+    padding: 0.5em 1em;
+    font-size: 1.3em;
+    border: 1px solid #BBBBBB;
+    /* width: 90%; */
+    margin-bottom: 1em;
+}
+
+body {
+    background:#2E9CE6;
+    padding: 3em;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    color:#fff;
+}
+ul {
+    list-style-type:none;
+    margin:0 0 2em 0;
+    padding:0 0 0 35px;
+}
+ul li {
+    display:inline;
+    margin-right: 30px;
+}
+ul li a {
+    font-size: 1.5em;
+}
+a {
+    color:#fff;
+    text-decoration:none;
+}
+.logoImg {
+    width: 145px;
+    margin-top: 15px;
+  }
+  
+  .topNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100px;
+    background-color: #2885C4;
+  }
+  
+  .topNav>ul {
+    text-align: right;
+  }
+  
+  .sideNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 1000px;
+    width: 155px;
+    background-color: #57B3F1;
+  }
+  
+  .sideNav>ul {
+    margin-top: 120px;
+  }
+  
+  .pTitle {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  /* -------  starting the old css   -------  */
+  
+  /* .container {
+    display: grid;
+    grid-template-columns: 50% auto;
+  } */
+  
+  .col {
+    padding: .4em 1.3em;
+  }
+  
+  .color-dark {
+    background: #2885C4;
+  }
+  
+  .color-light {
+    background: #57B3F1;
+  }
+  
+  input.txt {
+    border: 0;
+    padding: 1em;
+    width: 80%;
+    margin-bottom: 2em;
+  }
+  
+  input.btn {
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: #A5F883;
+    color: #003A61;
+    margin-bottom: 1em;
+    cursor: pointer;
+  }
+  
+  .btn {
+    font-family: 'Raleway', 'Arial';
+    font-weight: 700;
+  }
+  
+  /* -------  ending of the old css   -------  */
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 18px;
+    right: 150px;
+  }
+  
+  .btn  {
+    color: #fff;
+    background-color: #4280bf;
+    border-color: #4e555b;
+  }
+  .dropdown-menu  {
+      min-width: 7px;
+      width: 60px;
+  }
+  .dropdown-item>img {
+      max-width: 30px;
+  }
+  .dropdown-item {
+     padding:  .25rem 0.85rem;
+  }
+  .-content {
+    margin: 45px 0;
+}
+.nav-wrapper {
+    background-color: #4280bf;
+    margin: 50px 0;
+}
+.card {
+    background-color: #2E9CE6;
+    margin: 50px 0;
+}
+.card-tabs>ul>li {
+    display: block;
+    text-align: center;
+}
+div.loginForm>form>div.row>div.col-12>input {
+    width: 100%;
+}
+.error-message {
+    text-align: center;
+}
+.fa-exclamation-triangle {
+    margin-right: 10px;
+}
+.alert-danger {
+    width: 100%;
+}

@@ -1,0 +1,50 @@
+
+
+<div class="page">
+    <div class="page__demo">
+        <div class="main-container page__container">
+            <div *ngIf="isLoginError" class="red-text error-message row">
+                <div class="alert alert-danger" role="alert"><i class="fas fa-exclamation-triangle"></i> Incorrect username or password</div>
+            </div>
+<form #loginForm="ngForm" class="col-12" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+
+    <div class="page__section">
+			  <label class="field field_type4">
+        <input class="field__input" type="text" #UserName ngModel name="UserName" placeholder="Username"><!-- working --> 
+				<span class="field__label-wrap">
+				  <span class="field__label">Enter your e-mail</span>  
+				</span>
+			  </label>
+      </div> 
+      
+      <div class="page__section">
+          <label class="field field_type4">
+          <input class="field__input" type="password" #Password ngModel name="Password" placeholder="Password" required>
+          <span class="field__label-wrap">
+            <span class="field__label">Enter your password</span>
+          </span>
+          </label>
+        </div> 
+
+          <button class="btn btn-primary login" type="submit">Login</button>  
+			    
+      
+
+<div class="row">
+  <div class="input-field col-12">
+    <button class="btn btn-primary" (click)="socialSignIn('google')">Sign in with Google</button>  
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="input-field col-12">
+    <button class="btn btn-primary" (click)="socialSignIn('facebook')">Sign in with Facebook</button>
+  
+  </div>
+</div>  -->
+</form>
+
+  
+    </div>
+  </div>
+</div>
