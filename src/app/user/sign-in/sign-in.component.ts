@@ -34,7 +34,6 @@ export class SignInComponent implements OnInit {
     //   socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
     // }
     
-    
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform+" sign in data : " , userData);

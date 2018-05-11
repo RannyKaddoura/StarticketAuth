@@ -22,10 +22,10 @@ import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, FacebookLogi
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("168163270444930")
-        },
+        // {
+        //   id: FacebookLoginProvider.PROVIDER_ID,
+        //   provider: new FacebookLoginProvider("168163270444930")
+        // },
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider("496685044997-dtv7qo3r10c3puiufq4ujjvupmeo4gu1.apps.googleusercontent.com")
