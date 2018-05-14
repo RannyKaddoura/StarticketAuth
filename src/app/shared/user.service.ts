@@ -29,7 +29,7 @@ export class UserService {
   }
 
   userAuthenticationOAuth(method, token) {
-    console.log(method+" oauth sign in data data: ", token);
+    console.log(method+" oauth sign in data : ", token);
 
     var data = { "token": token};
     var reqHeader = new HttpHeaders({ 'Content-Type': 'application/json','No-Auth':'True' });

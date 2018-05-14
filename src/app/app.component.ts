@@ -2,7 +2,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { environment } from '../environments/environment';
 
-import { CookieService } from 'ngx-cookie-service';
 import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 @Component({
@@ -12,13 +11,12 @@ import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 })
 
 export class AppComponent implements OnInit {
-  cookieValue = 'UNKNOWN';
+  
  
-  constructor( private cookieService: CookieService ) { }
+  constructor( ) { }
  
-  ngOnInit(): void {
-    this.cookieService.set( 'Test', 'HelloCookie' );
-    this.cookieValue = this.cookieService.get('Tests');
+  ngOnInit() {
+    
   }
 
 }

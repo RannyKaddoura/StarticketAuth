@@ -1,3 +1,4 @@
+import { ErrorComponent } from './error/error.component';
 import { Routes } from '@angular/router'
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
@@ -14,6 +15,10 @@ export const appRoutes: Routes = [
     {
         path: 'login', component: UserComponent,
         children: [{ path: '', component: SignInComponent }]
+    },
+    {
+        path: 'error', component: ErrorComponent,
+        children: [{ path: '', component: ErrorComponent }]
     },
     { path : '', redirectTo:'/login', pathMatch : 'full'}
     

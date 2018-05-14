@@ -16,6 +16,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class SignInComponent implements OnInit {
   isLoginError : boolean = false;
   cookieValue = 'UNKNOWN';
+
   constructor(
     private userService : UserService,
     private router : Router,
@@ -24,32 +25,34 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cookieService.set( 'StarticketAuth', 'Hello World' );
+    this.cookieService.set( 'StarticketAuth', 'UNKNOWN', 1, '/', 'starticket.org', false  );
     this.cookieValue = this.cookieService.get('StarticketAuth');
   }
 
   public socialSignIn(socialPlatform : string) {
 
     console.log(socialPlatform+" sign in data click");
-    let socialPlatformProvider;
-    if(socialPlatform === "google"){
-      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    }
-    else if(socialPlatform === "facebook"){
-      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-    }
-    
-    this.socialAuthService.signIn(socialPlatformProvider).then(
-      (userData) => {
-        console.log(socialPlatform+" sign in data : " , userData);
-        let response = this.userService.userAuthenticationOAuth(socialPlatform, userData.token).subscribe((data : any)=>{
-          this.router.navigate(['/home']);
-        },
-        (err : HttpErrorResponse)=>{
-          this.isLoginError = true;
-        });
-
+      let socialPlatformProvider;
+      if(socialPlatform === "google"){
+        socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
       }
+      else if(socialPlatform === "facebook"){
+        socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+      }
+    
+      this.socialAuthService.signIn(socialPlatformProvider).then(
+        (userData) => {
+          console.log(socialPlatform + " sign in data : " , userData);
+
+          let response = this.userService.userAuthenticationOAuth(socialPlatform, userData.token).subscribe((data : any)=>{
+            this.router.navigate(['/home']);
+          },
+          (err : HttpErrorResponse)=>{
+            this.isLoginError = true;
+            console.log('Error Googel Login');
+          });
+
+        }
     );
   }
 
@@ -58,6 +61,7 @@ export class SignInComponent implements OnInit {
      this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
       localStorage.setItem('userToken',data.access_token);
       this.router.navigate(['/home']);
+      console.log('You are successfully logged in');
     },
     (err : HttpErrorResponse)=>{
       this.isLoginError = true;

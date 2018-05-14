@@ -18,6 +18,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { Ng2Webstorage} from 'ngx-webstorage';
 import { CookieService } from 'ngx-cookie-service';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from "angular5-social-login";
+import { ErrorComponent } from './error/error.component';
 
 
 export function getAuthServiceConfigs() {
@@ -42,7 +43,8 @@ export function getAuthServiceConfigs() {
     SignUpComponent,
     UserComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [ 
     BrowserModule,

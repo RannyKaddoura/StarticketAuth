@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
 import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from 'angular5-social-login';
 
 @Component({
   selector: 'app-home',
@@ -24,9 +25,17 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  Logout() {
+  Logout(): void {
     localStorage.removeItem('userToken');
-    this.cookieService.deleteAll('/','StarticketAuth');
+
+    this.cookieService.delete('StarticketAuth', '/', 'starticket.org');
+    this.cookieService.deleteAll('/', 'starticket.org');
+
+    // this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
+    // this.cookieService.delete('G_ENABLED_IDPS', '/', 'api.starticket.org');
+    // this.cookieService.delete('G_ENABLED_IDPS', '/', 'starticket.org');
+    // this.cookieService.delete('G_AUTHUSER_H', '/', 'api.starticket.org');
+
     this.router.navigate(['/login']);
   }
 
