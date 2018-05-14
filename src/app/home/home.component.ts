@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
-import { Cookie } from 'ng2-cookies/ng2-cookies';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,11 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
 export class HomeComponent implements OnInit {
   profile: any;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(
+    private router: Router,
+     private userService: UserService,
+     private cookieService: CookieService
+    ) { }
 
   ngOnInit() {
     this.userService.getUserProfile().subscribe((data: any) => {
@@ -22,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   Logout() {
     localStorage.removeItem('userToken');
-    Cookie.deleteAll();
+    this.cookieService.deleteAll('/','StarticketAuth');
     this.router.navigate(['/login']);
   }
 

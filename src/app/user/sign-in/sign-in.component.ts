@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {LocalStorage, SessionStorage, LocalStorageService, SessionStorageService} from 'ngx-webstorage';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular5-social-login';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -14,13 +15,17 @@ import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular
 })
 export class SignInComponent implements OnInit {
   isLoginError : boolean = false;
+  cookieValue = 'UNKNOWN';
   constructor(
     private userService : UserService,
     private router : Router,
-    private socialAuthService: AuthService
+    private socialAuthService: AuthService,
+    private cookieService: CookieService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.cookieService.set( 'StarticketAuth', 'Hello World' );
+    this.cookieValue = this.cookieService.get('StarticketAuth');
   }
 
   public socialSignIn(socialPlatform : string) {
@@ -30,9 +35,9 @@ export class SignInComponent implements OnInit {
     if(socialPlatform === "google"){
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     }
-    // else if(socialPlatform === "facebook"){
-    //   socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-    // }
+    else if(socialPlatform === "facebook"){
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    }
     
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
