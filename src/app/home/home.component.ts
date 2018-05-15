@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit {
     this.cookieService.delete('StarticketAuth');
     // this.cookieService.delete('StarticketAuth', '/', '.starticket.org');
     this.cookieService.deleteAll();
-
-    // this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
-    // this.cookieService.delete('G_ENABLED_IDPS', '/', 'api.starticket.org');
-    // this.cookieService.delete('G_ENABLED_IDPS', '/', 'starticket.org');
-    // this.cookieService.delete('G_AUTHUSER_H', '/', 'api.starticket.org');
-
+    this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
+    this.cookieService.delete('G_ENABLED_IDPS', '/', 'api.starticket.org');
+    this.cookieService.delete('G_ENABLED_IDPS', '/', '.starticket.org');
+    this.cookieService.delete('G_AUTHUSER_H', '/', 'api.starticket.org');
+    this.cookieService.delete('G_AUTHUSER_H', '/', '.starticket.org');
+    console.log('This cookieService now is : '+this.cookieService);
     this.router.navigate(['/login']);
   }
 
