@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {LocalStorage, SessionStorage, LocalStorageService, SessionStorageService} from 'ngx-webstorage';
-import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { LocalStorage, SessionStorage, LocalStorageService, SessionStorageService} from 'ngx-webstorage';
+import { LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angular5-social-login';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -15,7 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class SignInComponent implements OnInit {
   isLoginError : boolean = false;
-  cookieValue = 'UNKNOWN';
+  
 
   constructor(
     private userService : UserService,
@@ -24,14 +24,13 @@ export class SignInComponent implements OnInit {
     private cookieService: CookieService
   ) { }
 
-  ngOnInit(): void {
-    this.cookieService.set( 'StarticketAuth', 'UNKNOWN', 1, '/', 'starticket.org', false  );
-    this.cookieValue = this.cookieService.get('StarticketAuth');
+  ngOnInit() {
   }
 
   public socialSignIn(socialPlatform : string) {
 
     console.log(socialPlatform+" sign in data click");
+
       let socialPlatformProvider;
       if(socialPlatform === "google"){
         socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
@@ -58,8 +57,8 @@ export class SignInComponent implements OnInit {
 
 
   OnSubmit(userName,password){
-     this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
-      localStorage.setItem('userToken',data.access_token);
+      this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
+      // localStorage.setItem('userToken',data.access_token);
       this.router.navigate(['/home']);
       console.log('You are successfully logged in');
     },

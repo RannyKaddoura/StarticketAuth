@@ -25,11 +25,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  Logout(): void {
-    localStorage.removeItem('userToken');
-
-    this.cookieService.delete('StarticketAuth', '/', 'starticket.org');
-    this.cookieService.deleteAll('/', 'starticket.org');
+  Logout() {
+    // localStorage.removeItem('userToken');
+    
+    this.cookieService.delete('StarticketAuth');
+    // this.cookieService.delete('StarticketAuth', '/', '.starticket.org');
+    this.cookieService.deleteAll();
 
     // this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
     // this.cookieService.delete('G_ENABLED_IDPS', '/', 'api.starticket.org');

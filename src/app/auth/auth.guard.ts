@@ -14,7 +14,8 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean {
-                                            if (localStorage.getItem('userToken') != null)
+                                            // if (localStorage.getItem('userToken') != null)
+                                            if (this.cookieService.check('StarticketAuth') !=null)
                                             return true;
                                             this.router.navigate(['/login']);
                                             return false;
