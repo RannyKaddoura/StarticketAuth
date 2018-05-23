@@ -25,16 +25,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  Logout() {
-    this.userService.userLogout();
-    // localStorage.removeItem('userToken');
-    // this.authService.signOut();
-    // this.googleLoginProvider.signOut();
-    // this.cookieService.delete('StarticketAuth');
-    // this.cookieService.delete('StarticketAuth', '/', '.starticket.org');
-    // this.cookieService.deleteAll('/', '.starticket.org');
-    // this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
-    this.router.navigate(['/login']);
-  }
+ 
 
 }

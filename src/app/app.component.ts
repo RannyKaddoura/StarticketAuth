@@ -24,10 +24,8 @@ export class AppComponent implements OnInit {
       console.log('IsCookieExists : '+IsCookieExists);
     //Get Cookies
     this.cookieValue = this.cookieService.get('StarticketAuth');
-      console.log('The cookieValue now is : '+this.cookieValue);
     //Set cookies
     this.cookieService.set('StarticketAuth', 'UNKNOWN', 1, '/', '.starticket.org');
-      console.log('The cookieService now is : '+this.cookieService);
   
     
     // //Check Cookies
