@@ -18,16 +18,16 @@ export class AppComponent implements OnInit {
     private cookieService: CookieService
    ) { }
  
-  ngOnInit(): void {
+  ngOnInit() {
     //Check Cookies
     const IsCookieExists: boolean = this.cookieService.check('StarticketAuth');
       console.log('IsCookieExists : '+IsCookieExists);
     //Get Cookies
     this.cookieValue = this.cookieService.get('StarticketAuth');
-      console.log('This cookieValue is : '+this.cookieValue);
+      console.log('The cookieValue now is : '+this.cookieValue);
     //Set cookies
-    this.cookieService.set('StarticketAuth', 'UNKNOWN');
-      console.log('This cookieService now is : '+this.cookieService);
+    this.cookieService.set('StarticketAuth', 'UNKNOWN', 1, '/', '.starticket.org');
+      console.log('The cookieService now is : '+this.cookieService);
   
     
     // //Check Cookies
@@ -47,7 +47,6 @@ export class AppComponent implements OnInit {
 
 
 
-    // https://www.npmjs.com/package/ngx-cookie-service
     // const cookieExists: boolean = this.cookieService.check('StarticketAuth');
      
     // this.cookieService.set( 'StarticketAuth', 'UNKNOWN', 1, '/', 'starticket.org');

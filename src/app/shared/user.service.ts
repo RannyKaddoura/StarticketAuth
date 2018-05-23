@@ -41,4 +41,8 @@ export class UserService {
    return  this.http.get(this.rootUrl+'/en/profile', { withCredentials: true });
   }
 
+  userLogout(){
+    this.http.get(this.rootUrl+'/en/logout');
+}
+
 }

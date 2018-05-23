@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/user.service';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthService } from 'angular5-social-login';
+import { AuthService } from 'angular5-social-login'; 
 
 @Component({
   selector: 'app-home',
@@ -14,29 +14,26 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-     private userService: UserService,
-     private cookieService: CookieService
+    private userService: UserService,
+    private cookieService: CookieService,
+    private authService: AuthService 
     ) { }
 
   ngOnInit() {
     this.userService.getUserProfile().subscribe((data: any) => {
       this.profile = data;
-
     });
   }
 
   Logout() {
+    this.userService.userLogout();
     // localStorage.removeItem('userToken');
-    
-    this.cookieService.delete('StarticketAuth');
+    // this.authService.signOut();
+    // this.googleLoginProvider.signOut();
+    // this.cookieService.delete('StarticketAuth');
     // this.cookieService.delete('StarticketAuth', '/', '.starticket.org');
-    this.cookieService.deleteAll();
-    this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
-    this.cookieService.delete('G_ENABLED_IDPS', '/', 'api.starticket.org');
-    this.cookieService.delete('G_ENABLED_IDPS', '/', '.starticket.org');
-    this.cookieService.delete('G_AUTHUSER_H', '/', 'api.starticket.org');
-    this.cookieService.delete('G_AUTHUSER_H', '/', '.starticket.org');
-    console.log('This cookieService now is : '+this.cookieService);
+    // this.cookieService.deleteAll('/', '.starticket.org');
+    // this.cookieService.delete('StarticketAuth', '/', 'api.starticket.org');
     this.router.navigate(['/login']);
   }
 

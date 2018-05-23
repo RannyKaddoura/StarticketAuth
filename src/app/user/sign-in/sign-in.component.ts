@@ -48,7 +48,7 @@ export class SignInComponent implements OnInit {
           },
           (err : HttpErrorResponse)=>{
             this.isLoginError = true;
-            console.log('Error Googel Login');
+            console.log('Error '+socialPlatform+' Login');
           });
 
         }
