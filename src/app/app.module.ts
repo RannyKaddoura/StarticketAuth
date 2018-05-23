@@ -19,6 +19,7 @@ import { Ng2Webstorage} from 'ngx-webstorage';
 import { CookieService } from 'ngx-cookie-service';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from "angular5-social-login";
 import { ErrorComponent } from './error/error.component';
+import { LogoutComponent } from './user/logout/logout.component';
 
 
 export function getAuthServiceConfigs() {
@@ -44,7 +45,8 @@ export function getAuthServiceConfigs() {
     UserComponent,
     SignInComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    LogoutComponent
   ],
   imports: [ 
     BrowserModule,
