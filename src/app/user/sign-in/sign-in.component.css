@@ -295,4 +295,6 @@
     margin: 4rem 0;
 
   }
-  
+  .row>.input-field>a {
+    width: 100%;
+  }

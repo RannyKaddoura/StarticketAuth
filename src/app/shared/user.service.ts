@@ -47,7 +47,21 @@ export class UserService {
 
   logout(){
     this.http.get(this.rootUrl+'/auth/en/logout');
+    console.log('Logout Clicked')
     this.router.navigate(['/login']);
   }
-
 }
+
+
+// HttpClient.get(url: string, options?: {
+//                                         headers?: HttpHeaders | {
+//                                                                   [header: string]: string | string[];
+//                                         };
+//                                         observe?: "body";
+//                                         params?: HttpParams | {
+//                                                                 [param: string]: string | string[];
+//                                         };
+//                                         reportProgress?: boolean;
+//                                         responseType?: "json";
+//                                         withCredentials?: boolean;
+// }): Observable<Object> (+14 overloads)
