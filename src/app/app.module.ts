@@ -1,4 +1,4 @@
-import { WebStorageService } from 'angular-webstorage-service';
+// import { WebStorageService } from 'angular-webstorage-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
@@ -25,10 +25,10 @@ import { LogoutComponent } from './user/logout/logout.component';
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("168163270444930")
-        },
+        // {
+        //   id: FacebookLoginProvider.PROVIDER_ID,
+        //   provider: new FacebookLoginProvider("168163270444930")
+        // },
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider("496685044997-dtv7qo3r10c3puiufq4ujjvupmeo4gu1.apps.googleusercontent.com")

@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     //Check Cookies
     const IsCookieExists: boolean = this.cookieService.check('StarticketAuth');
-      console.log('IsCookieExists : '+IsCookieExists);
     //Get Cookies
     this.cookieValue = this.cookieService.get('StarticketAuth');
     //Set cookies

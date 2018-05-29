@@ -35,9 +35,9 @@ export class SignInComponent implements OnInit {
       if(socialPlatform === "google"){
         socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
       }
-      else if(socialPlatform === "facebook"){
-        socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-      }
+      // else if(socialPlatform === "facebook"){
+      //   socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+      // }
     
       this.socialAuthService.signIn(socialPlatformProvider).then(
         (userData) => {

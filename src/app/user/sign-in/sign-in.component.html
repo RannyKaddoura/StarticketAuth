@@ -9,7 +9,7 @@
 
         <div class="page__section">
           <label class="field field_type4">
-            <input class="field__input" type="text" #UserName ngModel name="UserName" placeholder="Username">
+            <input class="field__input" type="text" autocomplete="email" #UserName ngModel name="UserName" placeholder="Username" required>
             <span class="field__label-wrap">
               <span class="field__label">Enter your e-mail</span>
             </span>
@@ -18,7 +18,7 @@
 
         <div class="page__section">
           <label class="field field_type4">
-            <input class="field__input" type="password" #Password ngModel name="Password" placeholder="Password" required>
+            <input class="field__input" type="password" autocomplete="password" #Password ngModel name="Password" placeholder="Password" required>
             <span class="field__label-wrap">
               <span class="field__label">Enter your password</span>
             </span>
@@ -44,7 +44,7 @@
 
         <!-- <div class="row">
         <div class="input-field col-12">
-          <button class="btn btn-primary" (click)="socialSignIn('facebook')">Sign in with Facebook</button>
+          <a class="btn btn-primary" (click)="socialSignIn('facebook')">Sign in with Facebook</a>
         </div>
       </div>  -->
       </form>

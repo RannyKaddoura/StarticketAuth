@@ -12,6 +12,7 @@ export class LogoutComponent implements OnInit {
 
   constructor(
     private router: Router,
+    
     private userService: UserService,
     private cookieService: CookieService
   ) {}
